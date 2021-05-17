@@ -22,8 +22,9 @@ http.createServer(async function(req, res){
                 "data": {"user_id":"","username":"aboba","time":"1:2:3"}
                 }
                  */
+                console.log(body)
             }catch (err){
-                console.log("json parse error")
+                console.log("json parse error: "+body)
                 return;
             }
 
@@ -42,7 +43,9 @@ http.createServer(async function(req, res){
                         }
                         if(result){
                             console.log(JSON.stringify(result))
-                            res.write(`Name: ${result.username} Time: ${result.time}`);
+                            res.write(`${result.time}`);
+                            res.end();
+                        }else{
                             res.end();
                         }
                     })
@@ -52,9 +55,12 @@ http.createServer(async function(req, res){
                     if(result){
                         let str = ""
                         result.forEach((elem)=>{
-                            str += `Name: ${result.username} Time: ${result.time} \n`
+                            str += `Name: ${elem.username} Time: ${elem.time} \n`
                         })
+                        console.log(str)
                         res.write(str);
+                        res.end();
+                    }else{
                         res.end();
                     }
                 }else if(body.type == "set"){
