@@ -1,0 +1,5 @@
+Make POST request with JSON on localhost
+JSON {
+  "id" // - Code lock id 
+  "entry" // "true"/"false" was it entry or attempt of entry
+}

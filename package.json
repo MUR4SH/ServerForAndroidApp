@@ -1,0 +1,23 @@
+{
+  "name": "serveronjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MUR4SH/ServerOnJs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MUR4SH/ServerOnJs/issues"
+  },
+  "homepage": "https://github.com/MUR4SH/ServerOnJs#readme",
+  "description": "",
+  "dependencies": {
+    "mongodb": "^3.6.5"
+  }
+}
