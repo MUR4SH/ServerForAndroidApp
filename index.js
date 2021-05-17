@@ -42,7 +42,7 @@ http.createServer(async function(req, res){
                         }
                         if(result){
                             console.log(JSON.stringify(result))
-                            res.write(JSON.stringify(result));
+                            res.write(`Name: ${result.username} Time: ${result.time}`);
                             res.end();
                         }
                     })
@@ -50,7 +50,11 @@ http.createServer(async function(req, res){
                     var result = await collection.find({},{_id:1})
                     .toArray();
                     if(result){
-                        res.write(JSON.stringify(result));
+                        let str = ""
+                        result.forEach((elem)=>{
+                            str += `Name: ${result.username} Time: ${result.time} \n`
+                        })
+                        res.write(str);
                         res.end();
                     }
                 }else if(body.type == "set"){
